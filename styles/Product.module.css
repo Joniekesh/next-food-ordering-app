@@ -1,0 +1,134 @@
+.container {
+	display: flex;
+	padding: 30px 50px;
+}
+
+.left {
+	flex: 1;
+	position: relative;
+}
+
+.right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 50px;
+}
+
+.price {
+	color: rgb(219, 60, 2);
+	font-weight: bold;
+	border-bottom: 2px solid rgb(185, 136, 118);
+	width: max-content;
+}
+
+.sizes {
+	display: flex;
+	justify-content: space-between;
+	width: 65%;
+}
+
+.size {
+	position: relative;
+	cursor: pointer;
+}
+
+.pizzaSize {
+	position: absolute;
+	top: -10px;
+	left: 15px;
+	background-color: teal;
+	color: white;
+	border-radius: 10px;
+	width: fit-content;
+	height: fit-content;
+	padding: 0px 3px;
+	font-size: 15px;
+}
+
+.cheboxes {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+}
+
+.input {
+	width: 20px;
+	height: 20px;
+}
+
+.add {
+	display: flex;
+	align-items: center;
+	gap: 100px;
+	margin-top: 20px;
+}
+
+.buttons {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.leftBtn,
+.rightBtn {
+	background-color: rgb(219, 60, 2);
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.count {
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(63, 62, 62);
+}
+
+.addTocart {
+	border: none;
+	font-weight: bold;
+	background-color: teal;
+	color: white;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+/*MEDIA QUERY*/
+@media screen and (max-width: 700px) {
+	.container {
+		flex-direction: column;
+		padding: 20px;
+		align-items: center;
+	}
+
+	.left {
+		width: 70%;
+	}
+
+	.right {
+		padding: 0px;
+		width: 100%;
+		align-items: center;
+	}
+
+	.sizes {
+		width: 80%;
+	}
+
+	.title,
+	.price {
+		margin: 0px;
+	}
+}

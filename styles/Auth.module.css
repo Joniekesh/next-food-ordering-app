@@ -1,0 +1,57 @@
+.container {
+	height: calc(100vh - 100px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url("/img/pizza11.jpeg");
+}
+
+.auth {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	padding: 10px;
+	border-radius: 8px;
+}
+
+.title {
+	color: teal;
+	font-weight: bold;
+}
+
+.form {
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 8px;
+}
+
+.formGroup label {
+	margin-bottom: 4px;
+	font-weight: 500;
+}
+
+.formGroup input {
+	width: 100%;
+	padding: 6px;
+	font-size: 16px;
+}
+
+.btn {
+	border: none;
+	background-color: teal;
+	color: white;
+	cursor: pointer;
+	padding: 8px;
+	font-size: 16px;
+}
+
+.toggle {
+	color: rgb(219, 60, 2);
+	cursor: pointer;
+	font-weight: bold;
+}

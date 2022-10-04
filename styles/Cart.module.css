@@ -1,0 +1,115 @@
+.container {
+	padding: 20px 50px;
+	display: flex;
+	gap: 10px;
+}
+
+.left {
+	flex: 2;
+	width: 100%;
+}
+
+.table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid #ddd;
+}
+
+.th {
+	text-align: left;
+	padding: 8px;
+}
+
+.tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.tr:hover {
+	background-color: orange;
+}
+
+.td {
+	text-align: left;
+}
+
+.right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: rgb(59, 59, 59);
+	height: fit-content;
+	color: white;
+	padding: 0px 10px 10px 10px;
+	font-size: 18px;
+}
+
+.title {
+	text-align: center;
+}
+
+.item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.buttons {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.cash {
+	background-color: white;
+	color: teal;
+	border: none;
+	padding: 8px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.checkout {
+	border: none;
+	padding: 8px;
+	background-color: rgb(219, 60, 2);
+	color: white;
+	cursor: pointer;
+	transition: all 1.5s ease-in-out;
+}
+
+.checkout:hover {
+	transform: scale(1.04);
+}
+
+.link {
+	text-align: center;
+	font-size: 28px;
+	opacity: 0.5;
+}
+
+.clear {
+	border: none;
+	color: white;
+	background-color: crimson;
+	cursor: pointer;
+	padding: 8px;
+	margin-top: 10px;
+	transition: all 1.5s ease-in-out;
+}
+
+.clear:hover {
+	transform: scale(1.04);
+}
+
+@media screen and (max-width: 840px) {
+	.container {
+		flex-direction: column;
+		padding: 20px;
+		width: 100%;
+	}
+}

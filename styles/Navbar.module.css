@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
+
+.container {
+	width: 100%;
+	background-color: rgb(219, 60, 2);
+	color: white;
+	height: 100px;
+	padding: 0 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 3;
+	position: sticky;
+	top: 0;
+}
+
+.item {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.list,
+.products,
+.menu,
+.home,
+.events,
+.blog {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.listName {
+	font-family: "Sofia", cursive;
+	font-size: 40px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.call {
+	background-color: white;
+	width: 30px;
+	height: 30px;
+	color: rgb(219, 60, 2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 24px;
+	border-radius: 50%;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	font-weight: bold;
+}
+
+.cart {
+	font-size: 32px;
+	position: relative;
+	cursor: pointer;
+}
+
+.count {
+	position: absolute;
+	top: -5px;
+	left: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: white;
+	color: rgb(219, 60, 2);
+}
+
+/*MEDIA QUERY*/
+@media screen and (max-width: 1092px) {
+	.call,
+	.contact,
+	.products {
+		display: none;
+	}
+
+	.item {
+		gap: 16px;
+	}
+}
+
+@media screen and (max-width: 840px) {
+	.menu {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.home,
+	.events,
+	.blog {
+		display: none;
+	}
+
+	.container {
+		padding: 10px;
+		height: 80px;
+	}
+
+	.listName {
+		font-size: 30px;
+		margin-left: 0px;
+	}
+}
