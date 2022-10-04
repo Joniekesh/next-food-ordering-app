@@ -32,7 +32,7 @@ const Auth = () => {
 
 	useEffect(() => {
 		isAuthenticated && router.push("/");
-	}, [isAuthenticated]);
+	}, [isAuthenticated, router]);
 
 	const handleAuth = async (e) => {
 		e.preventDefault();

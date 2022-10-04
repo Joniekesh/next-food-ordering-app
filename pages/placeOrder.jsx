@@ -11,6 +11,7 @@ import {
 import CashPayment from "../components/CashPayment";
 import axios from "axios";
 import { removeFromCart, resetCart } from "../redux/cartRedux";
+import Link from "next/link";
 
 const PlaceOrder = () => {
 	const cart = useSelector((state) => state.cart);
@@ -21,6 +22,8 @@ const PlaceOrder = () => {
 	const amount = cart.total;
 	const router = useRouter();
 	const dispatch = useDispatch();
+
+	const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
 
 	const { user } = useSelector((state) => state.auth);
 	const isAuthenticated = user?.token;
@@ -42,7 +45,7 @@ const PlaceOrder = () => {
 		if (!userAddress) {
 			router.push("/address");
 		}
-	}, [isAuthenticated, userAddress]);
+	}, [isAuthenticated, userAddress, router]);
 
 	const createOrder = async (data) => {
 		try {
@@ -68,7 +71,7 @@ const PlaceOrder = () => {
 					currency: currency,
 				},
 			});
-		}, [currency, showSpinner]);
+		}, [currency, showSpinner, dispatch, options]);
 
 		return (
 			<>
@@ -186,8 +189,7 @@ const PlaceOrder = () => {
 								</button>
 								<PayPalScriptProvider
 									options={{
-										"client-id":
-											"AdkvF0Iypl_i6TXgWO5vBMuCc-XrkjBRkza0iai4MiW1P_MW8oEuDJSfsW2VSujccS5CknMeQRQONgeC",
+										"client-id": PAYPAL_CLIENT_ID,
 										components: "buttons",
 										currency: "USD",
 										// "disable-funding": "credit,card,p24",
@@ -219,7 +221,7 @@ const PlaceOrder = () => {
 				<p className={styles.link}>
 					No pizza item(s) in your cart yet <br />
 					Please{" "}
-					<a
+					<Link
 						href="/"
 						style={{
 							borderBottom: "1px solid rgb(219, 60, 2)",
@@ -227,7 +229,7 @@ const PlaceOrder = () => {
 						}}
 					>
 						Checkout
-					</a>{" "}
+					</Link>{" "}
 					some yummy pizzas to add to your cart, pay and have them delivered
 					ASAP.
 				</p>

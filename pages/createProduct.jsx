@@ -39,7 +39,7 @@ const CreateProduct = () => {
 			});
 			router.push("/");
 		}
-	}, [token, currentUser]);
+	}, [token, currentUser, router]);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

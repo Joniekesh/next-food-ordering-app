@@ -22,7 +22,7 @@ const Address = () => {
 		if (!isAuthenticated) {
 			router.push("/auth");
 		}
-	}, [isAuthenticated]);
+	}, [isAuthenticated, router]);
 
 	const handleAddress = (e) => {
 		e.preventDefault();

@@ -55,6 +55,7 @@ const Product = ({ pizza }) => {
 					height={500}
 					width={500}
 					style={{ borderRadius: "50%" }}
+					alt=""
 				/>
 			</div>
 			<div className={styles.right}>
@@ -69,6 +70,7 @@ const Product = ({ pizza }) => {
 							height={30}
 							width={30}
 							style={{ borderRadius: "50%" }}
+							alt=""
 						/>
 						<span className={styles.pizzaSize}>Small</span>
 					</div>
@@ -78,6 +80,7 @@ const Product = ({ pizza }) => {
 							height={40}
 							width={40}
 							style={{ borderRadius: "50%" }}
+							alt=""
 						/>
 						<span className={styles.pizzaSize}>Medium</span>
 					</div>
@@ -87,6 +90,7 @@ const Product = ({ pizza }) => {
 							height={50}
 							width={50}
 							style={{ borderRadius: "50%" }}
+							alt=""
 						/>
 						<span className={styles.pizzaSize}>Large</span>
 					</div>

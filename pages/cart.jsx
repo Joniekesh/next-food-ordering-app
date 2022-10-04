@@ -1,5 +1,6 @@
 import styles from "../styles/Cart.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -81,7 +82,7 @@ const Cart = () => {
 					currency: currency,
 				},
 			});
-		}, [currency, showSpinner]);
+		}, [currency, showSpinner, options, dispatch]);
 
 		return (
 			<>
@@ -246,7 +247,7 @@ const Cart = () => {
 				<p className={styles.link}>
 					No pizza item(s) in your cart yet <br />
 					Please{" "}
-					<a
+					<Link
 						href="/"
 						style={{
 							borderBottom: "1px solid rgb(219, 60, 2)",
@@ -254,7 +255,7 @@ const Cart = () => {
 						}}
 					>
 						Shop for
-					</a>{" "}
+					</Link>{" "}
 					some yummy pizzas to add to your cart, pay and have them delivered
 					ASAP.
 				</p>
