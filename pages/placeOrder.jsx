@@ -10,7 +10,7 @@ import {
 } from "@paypal/react-paypal-js";
 import CashPayment from "../components/CashPayment";
 import axios from "axios";
-import { removeFromCart, resetCart } from "../redux/cartRedux";
+import { resetCart } from "../redux/cartRedux";
 import Link from "next/link";
 
 const PlaceOrder = () => {
@@ -49,7 +49,10 @@ const PlaceOrder = () => {
 
 	const createOrder = async (data) => {
 		try {
-			const res = await axios.post("http://localhost:3000/api/orders", data);
+			const res = await axios.post(
+				"https://next-food-ordering-app-six.vercel.app/api/orders",
+				data
+			);
 
 			if (res.status === 201) {
 				dispatch(resetCart());

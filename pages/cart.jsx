@@ -57,7 +57,7 @@ const Cart = () => {
 				},
 			};
 			const res = await axios.post(
-				"http://localhost:3000/api/orders",
+				"https://next-food-ordering-app-six.vercel.app/api/orders",
 				data,
 				config
 			);

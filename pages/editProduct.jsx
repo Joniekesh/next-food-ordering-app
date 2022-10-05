@@ -67,7 +67,7 @@ const EditProduct = () => {
 				const { url } = uploadRes.data;
 
 				const res = await axios.put(
-					`http://localhost:3000/api/products/${product._id}`,
+					`https://next-food-ordering-app-six.vercel.app/api/products/${product._id}`,
 					{
 						title,
 						desc,

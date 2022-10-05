@@ -65,7 +65,7 @@ const CreateProduct = () => {
 				const { url } = uploadRes.data;
 
 				const res = await axios.post(
-					"http://localhost:3000/api/products",
+					"https://next-food-ordering-app-six.vercel.app/api/products",
 					{
 						title,
 						desc,

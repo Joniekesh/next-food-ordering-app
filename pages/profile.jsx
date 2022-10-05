@@ -164,7 +164,9 @@ const Profile = ({ orders }) => {
 };
 
 export const getServerSideProps = async () => {
-	const res = await axios.get("http://localhost:3000/api/orders");
+	const res = await axios.get(
+		"https://next-food-ordering-app-six.vercel.app/api/orders"
+	);
 
 	return {
 		props: {

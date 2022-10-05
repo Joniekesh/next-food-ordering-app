@@ -11,7 +11,9 @@ const Admin = ({ products, orders }) => {
 
 	const handleDelete = async (id) => {
 		if (window.confirm("Are You SURE? This can not be UNDONE")) {
-			await axios.delete(`http://localhost:3000/api/products/${id}`);
+			await axios.delete(
+				`https://next-food-ordering-app-six.vercel.app/api/products/${id}`
+			);
 
 			setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
 		}
@@ -22,9 +24,12 @@ const Admin = ({ products, orders }) => {
 		const currentStatus = item.status;
 
 		try {
-			const res = await axios.put("http://localhost:3000/api/orders/" + id, {
-				status: currentStatus + 1,
-			});
+			const res = await axios.put(
+				"https://next-food-ordering-app-six.vercel.app/api/orders/" + id,
+				{
+					status: currentStatus + 1,
+				}
+			);
 			setOrderList([
 				res.data,
 				...orderList.filter((order) => order._id !== id),
@@ -173,8 +178,12 @@ const Admin = ({ products, orders }) => {
 };
 
 export const getServerSideProps = async () => {
-	const productRes = await axios.get("http://localhost:3000/api/products");
-	const orderRes = await axios.get("http://localhost:3000/api/orders");
+	const productRes = await axios.get(
+		"https://next-food-ordering-app-six.vercel.app/api/products"
+	);
+	const orderRes = await axios.get(
+		"https://next-food-ordering-app-six.vercel.app/api/orders"
+	);
 
 	return {
 		props: {

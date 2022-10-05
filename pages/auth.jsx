@@ -44,7 +44,7 @@ const Auth = () => {
 				dispatch(registerRequest());
 				try {
 					const res = await axios.post(
-						"http://localhost:3000/api/users/register",
+						"https://next-food-ordering-app-six.vercel.app/api/users/register",
 						{ fullName, email, phoneNumber, password }
 					);
 
@@ -61,10 +61,13 @@ const Auth = () => {
 		} else {
 			dispatch(loginRequest());
 			try {
-				const res = await axios.post("http://localhost:3000/api/users/login", {
-					email,
-					password,
-				});
+				const res = await axios.post(
+					"https://next-food-ordering-app-six.vercel.app/api/users/login",
+					{
+						email,
+						password,
+					}
+				);
 				dispatch(loginSuccess(res.data));
 				setCookie("token", res.data.token);
 				toast.success("Login Success", { theme: "colored" });
