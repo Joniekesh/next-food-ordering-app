@@ -5,7 +5,7 @@ import Link from "next/link";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const admin = ({ products, orders }) => {
+const Admin = ({ products, orders }) => {
 	const [pizzaList, setPizzaList] = useState(products);
 	const [orderList, setOrderList] = useState(orders);
 
@@ -184,4 +184,4 @@ export const getServerSideProps = async () => {
 	};
 };
 
-export default admin;
+export default Admin;

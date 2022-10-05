@@ -12,7 +12,7 @@ const Profile = ({ orders }) => {
 	useEffect(() => {
 		const myOrder = orders.filter((order) => order.userId === currentUser?._id);
 		setMyOrders(myOrder);
-	}, []);
+	}, [currentUser?._id, orders]);
 
 	const latestOrder = myOrders[myOrders.length - 1];
 
