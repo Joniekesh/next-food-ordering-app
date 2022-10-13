@@ -1,9 +1,9 @@
 {
 	"name": "joniefoodie",
 	"version": "0.1.0",
-	"main": "index.js",
+	"private": true,
 	"scripts": {
-		"dev": "next",
+		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint"
