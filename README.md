@@ -1,3 +1,30 @@
+This is a nextjs food ordering app built with MongoDB and Paypal Payment implementation.
+
+# KEY FEATURES:
+1. Product list.
+2. Product page.
+3. Cat page.
+4. Authentication.
+5. Admin CRUD functionality pages.
+6. Contact page.
+7. Paypal and cash on delivery checkout implementations.
+
+## TECHNOLOGIES USED
+1. Email js for contact mails.
+2. Redux for state management.
+3. React-paypal for payment checkout.
+4. Bcryptjs.
+5. Cookie parser.
+6. Json web token.
+7. Mongoose.
+8. React toastify.
+9. React icons.
+
+[
+![nextjs-home-page](https://user-images.githubusercontent.com/73966666/195628185-221efa7f-e407-4bb8-8f4e-e7f87dae3e34.PNG)
+](url)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
