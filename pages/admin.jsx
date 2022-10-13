@@ -5,7 +5,7 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import axiosInstance from "../utils/axiosInstance";
 
-const admin = ({ products, orders }) => {
+const Admin = ({ products, orders }) => {
 	const [pizzaList, setPizzaList] = useState(products);
 	const [orderList, setOrderList] = useState(orders);
 
@@ -173,8 +173,8 @@ const admin = ({ products, orders }) => {
 };
 
 export const getServerSideProps = async () => {
-	const productRes = await axios.get("http://localhost:3000/api/products");
-	const orderRes = await axios.get("http://localhost:3000/api/orders");
+	const productRes = await axiosInstance.get("/products");
+	const orderRes = await axiosInstance.get("/orders");
 
 	return {
 		props: {
@@ -184,4 +184,4 @@ export const getServerSideProps = async () => {
 	};
 };
 
-export default admin;
+export default Admin;

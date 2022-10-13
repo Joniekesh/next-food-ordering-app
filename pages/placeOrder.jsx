@@ -10,7 +10,7 @@ import {
 } from "@paypal/react-paypal-js";
 import CashPayment from "../components/CashPayment";
 import axiosInstance from "../utils/axiosInstance";
-import { removeFromCart, resetCart } from "../redux/cartRedux";
+import { resetCart } from "../redux/cartRedux";
 import Link from "next/link";
 
 const PlaceOrder = () => {
@@ -28,7 +28,7 @@ const PlaceOrder = () => {
 	const { user } = useSelector((state) => state.auth);
 	const isAuthenticated = user?.token;
 
-	const { userAddress } = useSelector((state) => state.address);
+	// const { userAddress } = useSelector((state) => state.address);
 
 	const handleCash = () => {
 		if (isAuthenticated) {
@@ -71,7 +71,7 @@ const PlaceOrder = () => {
 					currency: currency,
 				},
 			});
-		}, [currency, showSpinner]);
+		}, [currency, showSpinner, dispatch, options]);
 
 		return (
 			<>
