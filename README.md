@@ -1,3 +1,6 @@
+[
+![nextjs-home-page](https://user-images.githubusercontent.com/73966666/195628185-221efa7f-e407-4bb8-8f4e-e7f87dae3e34.PNG)
+](url)
 This is a nextjs food ordering app built with MongoDB and Paypal Payment implementation.
 
 # KEY FEATURES:
@@ -20,9 +23,7 @@ This is a nextjs food ordering app built with MongoDB and Paypal Payment impleme
 8. React toastify.
 9. React icons.
 
-[
-![nextjs-home-page](https://user-images.githubusercontent.com/73966666/195628185-221efa7f-e407-4bb8-8f4e-e7f87dae3e34.PNG)
-](url)
+
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
