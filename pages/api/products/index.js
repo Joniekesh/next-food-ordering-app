@@ -1,6 +1,5 @@
 import dbConnect from "../../../config/mongo";
 import Product from "../../../models/Product";
-import { getCookie } from "cookies-next";
 
 export default async function handler(req, res) {
 	const { method } = req;

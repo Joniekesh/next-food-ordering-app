@@ -1,6 +1,5 @@
 import dbConnect from "../../../config/mongo";
 import Order from "../../../models/Order";
-import User from "../../../models/User";
 import { getCookie } from "cookies-next";
 import jwt from "jsonwebtoken";
 

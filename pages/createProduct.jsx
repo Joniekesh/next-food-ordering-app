@@ -4,7 +4,7 @@ import styles from "../styles/CreateProduct.module.css";
 import { getCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
-import axios from "axios";
+import axiosInstance from "../utils/axiosInstance";
 
 const CreateProduct = () => {
 	const [title, setTitle] = useState("");
@@ -57,15 +57,15 @@ const CreateProduct = () => {
 			data.append("upload_preset", "upload");
 
 			try {
-				const uploadRes = await axios.post(
+				const uploadRes = await axiosInstance.post(
 					"https://api.cloudinary.com/v1_1/joniekesh/image/upload",
 					data
 				);
 
 				const { url } = uploadRes.data;
 
-				const res = await axios.post(
-					"https://next-food-ordering-app-six.vercel.app/api/products",
+				const res = await axiosInstance.post(
+					"/products",
 					{
 						title,
 						desc,

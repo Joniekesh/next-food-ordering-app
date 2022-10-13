@@ -10,10 +10,10 @@ import {
 	usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
 import CashPayment from "../components/CashPayment";
-import axios from "axios";
 import { removeFromCart, resetCart } from "../redux/cartRedux";
 import { getCookie } from "cookies-next";
 import { toast } from "react-toastify";
+import axiosInstance from "../utils/axiosInstance";
 
 const Cart = () => {
 	const cart = useSelector((state) => state.cart);
@@ -56,11 +56,7 @@ const Cart = () => {
 					"Content-Type": "application/json",
 				},
 			};
-			const res = await axios.post(
-				"https://next-food-ordering-app-six.vercel.app/api/orders",
-				data,
-				config
-			);
+			const res = await axiosInstance.post("/orders", data, config);
 
 			if (res.status === 201) {
 				dispatch(resetCart());

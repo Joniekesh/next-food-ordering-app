@@ -1,9 +1,9 @@
 import styles from "../../styles/Product.module.css";
 import Image from "next/image";
 import { useState } from "react";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartRedux";
+import axiosInstance from "../../utils/axiosInstance";
 
 const Product = ({ pizza }) => {
 	const [quantity, setQuantity] = useState(1);
@@ -136,9 +136,7 @@ const Product = ({ pizza }) => {
 };
 
 export const getServerSideProps = async ({ params }) => {
-	const res = await axios.get(
-		`http://localhost:3000/api/products/${params.id}`
-	);
+	const res = await axiosInstance.get(`/products/${params.id}`);
 
 	return {
 		props: {

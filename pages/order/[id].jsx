@@ -1,5 +1,5 @@
-import axios from "axios";
 import styles from "../../styles/Order.module.css";
+import axiosInstance from "../../utils/axiosInstance";
 
 const Order = ({ order }) => {
 	return (
@@ -37,7 +37,7 @@ const Order = ({ order }) => {
 };
 
 export const getServerSideProps = async ({ params }) => {
-	const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+	const res = await axiosInstance.get(`/orders/${params.id}`);
 
 	return {
 		props: {

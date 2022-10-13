@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Featured from "../components/Featured";
 import PizzaList from "../components/PizzaList";
-import axios from "axios";
+import axiosInstance from "../utils/axiosInstance";
 
 export default function Home({ products }) {
 	return (
@@ -19,9 +19,7 @@ export default function Home({ products }) {
 }
 
 export const getServerSideProps = async () => {
-	const res = await axios.get(
-		"https://next-food-ordering-app-six.vercel.app/api/products"
-	);
+	const res = await axiosInstance.get("/products");
 
 	return {
 		props: {

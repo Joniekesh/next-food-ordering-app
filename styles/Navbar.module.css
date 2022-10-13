@@ -23,6 +23,12 @@
 	gap: 20px;
 }
 
+.item li,
+.logout,
+.userName {
+	padding: 3px;
+}
+
 .item li:hover,
 .logout:hover,
 .userName:hover {

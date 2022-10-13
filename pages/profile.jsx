@@ -1,5 +1,5 @@
 import styles from "../styles/Profile.module.css";
-import axios from "axios";
+import axiosInstance from "../utils/axiosInstance";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Link from "next/link";
@@ -35,14 +35,15 @@ const Profile = ({ orders }) => {
 						<button
 							style={{
 								cursor: "pointer",
-								padding: "5px",
+								padding: "8px 5px",
 								backgroundColor: "crimson",
 								fontSize: "16px",
 								color: "white",
 								border: "none",
+								borderRadius: "5px",
 							}}
 						>
-							Go To Admin Dashboard
+							Visit Dashboard
 						</button>
 					</div>
 				</Link>
@@ -164,9 +165,7 @@ const Profile = ({ orders }) => {
 };
 
 export const getServerSideProps = async () => {
-	const res = await axios.get(
-		"https://next-food-ordering-app-six.vercel.app/api/orders"
-	);
+	const res = await axiosInstance.get("/orders");
 
 	return {
 		props: {

@@ -1,6 +1,5 @@
 import styles from "../styles/Auth.module.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -14,6 +13,7 @@ import {
 import Loader from "../utils/Loader";
 import { setCookie } from "cookies-next";
 import { toast } from "react-toastify";
+import axiosInstance from "../utils/axiosInstance";
 
 const Auth = () => {
 	const [isRegister, setIsRegister] = useState(false);
@@ -43,10 +43,12 @@ const Auth = () => {
 			} else {
 				dispatch(registerRequest());
 				try {
-					const res = await axios.post(
-						"https://next-food-ordering-app-six.vercel.app/api/users/register",
-						{ fullName, email, phoneNumber, password }
-					);
+					const res = await axiosInstance.post("/users/register", {
+						fullName,
+						email,
+						phoneNumber,
+						password,
+					});
 
 					dispatch(registerSuccess(res.data));
 					setCookie("token", res.data.token);
@@ -61,13 +63,10 @@ const Auth = () => {
 		} else {
 			dispatch(loginRequest());
 			try {
-				const res = await axios.post(
-					"https://next-food-ordering-app-six.vercel.app/api/users/login",
-					{
-						email,
-						password,
-					}
-				);
+				const res = await axiosInstance.post("/users/login", {
+					email,
+					password,
+				});
 				dispatch(loginSuccess(res.data));
 				setCookie("token", res.data.token);
 				toast.success("Login Success", { theme: "colored" });
@@ -84,9 +83,9 @@ const Auth = () => {
 		<div className={styles.container}>
 			<div className={styles.auth}>
 				{isRegister ? (
-					<h2 className={styles.title}>Register</h2>
+					<h1 className={styles.title}>Register</h1>
 				) : (
-					<h2 className={styles.title}>Login</h2>
+					<h1 className={styles.title}>Login</h1>
 				)}
 				<form className={styles.form} onSubmit={handleAuth}>
 					{isRegister && (
@@ -147,7 +146,7 @@ const Auth = () => {
 					<button className={styles.btn}>
 						{loading ? <Loader /> : isRegister ? "Register" : "Login"}
 					</button>
-					<span>
+					<div>
 						{isRegister ? "Already have an account?" : "Don't have an account?"}
 						<span
 							onClick={() => setIsRegister(!isRegister)}
@@ -155,7 +154,7 @@ const Auth = () => {
 						>
 							{isRegister ? "Login" : "Register"}
 						</span>
-					</span>
+					</div>
 				</form>
 			</div>
 		</div>

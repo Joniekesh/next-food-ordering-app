@@ -9,8 +9,8 @@ import {
 	usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
 import CashPayment from "../components/CashPayment";
-import axios from "axios";
-import { resetCart } from "../redux/cartRedux";
+import axiosInstance from "../utils/axiosInstance";
+import { removeFromCart, resetCart } from "../redux/cartRedux";
 import Link from "next/link";
 
 const PlaceOrder = () => {
@@ -38,21 +38,18 @@ const PlaceOrder = () => {
 		}
 	};
 
-	useEffect(() => {
-		if (!isAuthenticated) {
-			router.push("/auth");
-		}
-		if (!userAddress) {
-			router.push("/address");
-		}
-	}, [isAuthenticated, userAddress, router]);
+	// useEffect(() => {
+	// 	if (!isAuthenticated) {
+	// 		router.push("/auth");
+	// 	}
+	// 	if (!userAddress) {
+	// 		router.push("/address");
+	// 	}
+	// }, [isAuthenticated, userAddress, router]);
 
 	const createOrder = async (data) => {
 		try {
-			const res = await axios.post(
-				"https://next-food-ordering-app-six.vercel.app/api/orders",
-				data
-			);
+			const res = await axiosInstance.post("/orders", data);
 
 			if (res.status === 201) {
 				dispatch(resetCart());
@@ -74,7 +71,7 @@ const PlaceOrder = () => {
 					currency: currency,
 				},
 			});
-		}, [currency, showSpinner, dispatch, options]);
+		}, [currency, showSpinner]);
 
 		return (
 			<>

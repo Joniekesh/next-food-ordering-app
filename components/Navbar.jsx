@@ -57,7 +57,9 @@ const Navbar = () => {
 				</Link>
 			</ul>
 			<Link href="/profile" passHref>
-				<span className={styles.logout}>{currentUser?.fullName}</span>
+				<span className={styles.logout} style={{ fontWeight: "bold" }}>
+					{currentUser?.fullName}
+				</span>
 			</Link>
 			{currentUser ? (
 				<span className={styles.logout} onClick={handleLogout}>

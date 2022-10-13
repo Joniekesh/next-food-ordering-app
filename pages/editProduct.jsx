@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { getCookie } from "cookies-next";
-
-import axios from "axios";
+import axiosInstance from "../utils/axiosInstance";
 
 const EditProduct = () => {
 	const router = useRouter();
@@ -59,15 +58,15 @@ const EditProduct = () => {
 			data.append("upload_preset", "upload");
 
 			try {
-				const uploadRes = await axios.post(
+				const uploadRes = await axiosInstance.post(
 					"https://api.cloudinary.com/v1_1/joniekesh/image/upload",
 					data
 				);
 
 				const { url } = uploadRes.data;
 
-				const res = await axios.put(
-					`https://next-food-ordering-app-six.vercel.app/api/products/${product._id}`,
+				const res = await axiosInstance.put(
+					`/products/${product._id}`,
 					{
 						title,
 						desc,
